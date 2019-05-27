@@ -1,0 +1,373 @@
+
+<header id="topbar" class="ph10">
+
+
+    <div class="text-center">
+
+        <h4>Invoice</h4>
+
+        <hr class="alt short">
+
+    </div>
+
+    <div class="topbar-left">
+
+        <ul class="nav nav-list nav-list-topbar pull-left">
+            <li class="active">
+
+                <a href="">Invoice</a>
+
+            </li>
+            <!--<li class="">
+
+                <a href="<?php /*echo base_url(); */?>admin/orders">View All</a>
+
+            </li>-->
+        </ul>
+
+    </div>
+
+</header>
+<section id="content" class="table-layout animated fadeIn">
+
+    <div class="row">
+
+        <div class="panel">
+
+            <div class="panel-body">
+            <?php if($order_details['payment_status']==1){ ?>
+                <a data-target="#globalModal" data-toggle="modal" href="<?php echo base_url('admin/orders/mark_as_paid/' . $order_details['id']); ?>" class="pull-right btn btn-warning">Mark as paid</a>
+            <?php } ?>
+            <?php if($order_details['payment_status']==2){ ?>
+                <a data-target="#globalModal" data-toggle="modal" href="<?php echo base_url('admin/orders/mark_as_unpaid/' . $order_details['id']); ?>" class="pull-right btn btn-warning">Mark as unpaid</a>
+            <?php } ?>
+                <a target="_blank" href="javascript:" class="pull-right btn btn-primary mr10 print_invoice">Print</a>
+                <?php if(isset($cart_items) && !empty($cart_items)) { ?>
+                    <?php
+                    $attributes = array('id' => 'ord_frm');
+                    echo form_open_multipart(base_url().'admin/orders/change_order_status', $attributes);
+                    ?>
+                    <table class="table table-responsive" width="990px" border="0" cellspacing="0" cellpadding="10" style="font-size:14px; line-height:22px; font-family:'Open Sans','Times New Roman', Times, serif;">
+                        <tr>
+                            <td align="center"><img src="<?php echo $this->config->item('user_images');?>vakullaa-logo.png" alt="" class="img-responsive"></td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <span style="float:left;text-align: left;">Order No:<?php echo $order_details['order_id']; ?></span>
+                                        </td>
+                                        <td align="center">
+                                            Retail Invoice/Bill<br/>
+                                            <?php if(!empty($supermarket_results)){ ?>
+                                                <br/>
+                                                <?php echo $supermarket_results['company_1']; ?>,<br/>
+                                                <?php echo $supermarket_results['address_1']; ?>,<br/>
+                                                <?php echo $supermarket_results['address_2']; ?>,<br/>
+                                                <?php echo $supermarket_results['city']; ?> - <?php echo $supermarket_results['pincode']; ?><br/>
+                                                <?php echo $supermarket_results['state']; ?>  <?php echo $supermarket_results['country']; ?>.
+                                                Ph: <?php echo $supermarket_results['phone_no']; ?><br/>
+                                                <?php if(!empty($supermarket_results['email_address'])){ ?>
+                                                    Email: <?php echo $supermarket_results['email_address']; ?><br/>
+                                                <?php } ?>
+                                                <?php if(!empty($supermarket_results['website'])){ ?>
+                                                    Website: <?php echo $supermarket_results['website']; ?><br/>
+                                                <?php } ?>
+                                                GSTIN: <?php echo $supermarket_results['gstin_no']; ?><br/>
+                                            <?php } ?>
+                                        </td>
+                                        <td>
+                                            <span style="float:right;text-align: right;">Invoice Date:<?php echo date('d-m-Y', strtotime($order_details['created'])); ?></span>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="font-size:13px; height:30px;"><strong>ORDER DETAILS :</strong></div>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="10" style="font-size:14px; line-height:20px; font-family:Open Sans, 'Times New Roman', Times, serif;">
+                                    <tr style="font-weight:bold;">
+                                        <td width="5%" style="border-bottom:2px solid #4F7F31; border-top:1px solid #4F7F31; font-size:13px;">&nbsp;</td>
+                                        <td width="55%" align="center" style="border-bottom:2px solid #4F7F31; border-top:1px solid #4F7F31; font-size:13px;">DESCRIPTION</td>
+                                        <td width="10%" style="border-bottom:2px solid #4F7F31; border-top:1px solid #4F7F31; font-size:13px;">STATUS</td>
+                                        <td width="10%" align="center" style="border-bottom:2px solid #4F7F31; border-top:1px solid #4F7F31; font-size:13px;">UNIT PRICE</td>
+                                        <td width="10%" align="center" style="border-bottom:2px solid #4F7F31; border-top:1px solid #4F7F31; font-size:13px;">QUANTITY</td>
+                                        <td width="10%" align="right" style="border-bottom:2px solid #4F7F31; border-top:1px solid #4F7F31; font-size:13px;">SUB TOTAL</td>
+                                    </tr>
+                                    <?php
+                                    $total_price=0;
+                                    $total_cart_items=0;
+                                    $coupon_discount=0;
+                                    foreach ($cart_items as $k=>$cart_row) {
+                                        if($cart_row['option_id']==0){
+                                            $product_image = $this->config->item('upload') .'products/'.$cart_row['product_thumb_image'];
+                                        }else{
+                                            $product_image = $this->config->item('upload') .'product_option_images/'.$cart_row['option_image'];
+                                            if(empty($cart_row['option_image'])){
+                                                $product_image = $this->config->item('upload') .'products/'.$cart_row['product_thumb_image'];
+                                            }
+                                        }
+                                        if($cart_row['coupon_applied_id']!=0) {
+                                            $coupon_code = $cart_row['coupon_code'];
+                                            $coupon_applied_id = $cart_row['coupon_applied_id'];
+                                            $coupon_discount += $cart_row['coupon_discount'];
+                                        }
+                                        ?>
+                                        <tr>
+                                            <td align="center" style="border-bottom:1px solid #cccccc;"><input type="checkbox" name="cart_id[]" id="cartid_<?php echo $k; ?>" value="<?php echo $cart_row['id']; ?>" /></td>
+                                            <td height="30" align="left" style="border-bottom:1px solid #cccccc;">
+                                                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:14px; line-height:20px; font-family:Open Sans, 'Times New Roman', Times, serif;">
+                                                    <tr>
+                                                        <td style="width:15%"><img src="<?php echo $product_image; ?>" height="75" /> </td>
+                                                        <td style="width:85%">
+                                                            <p><?php echo $cart_row['product_name']; ?></p>
+                                                            <?php if($cart_row['option_name']!="") { ?>
+                                                                <p>Option Code: <?php echo $cart_row['option_code']; ?></p>
+                                                            <?php }else{ ?>
+                                                                <p>Product Code : <?php echo $cart_row['product_code']; ?></p>
+                                                            <?php } ?>
+                                                            <?php if($cart_row['option_name']!="") { ?>
+                                                                <p>Option: <?php echo $cart_row['option_name']; ?></p>
+                                                            <?php } ?>
+                                                            <?php if(!empty($cart_row['cart_offer_prod'])){
+                                                                foreach($cart_row['cart_offer_prod'] as $k1=>$v1){?>
+                                                                    <p class="promo-sec">Promo applied: <?php echo $v1['offer_product_name'];  ?> <?php echo (!empty($v1['offer_option_name']))?'-'.$v1['offer_option_name']:'';  ?></p>
+                                                                <?php }  }?>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td style="border-bottom:1px solid #cccccc;">
+                                                <?php echo $cart_row['status_text']; ?>
+                                            </td>
+                                            <td align="center" style="border-bottom:1px solid #cccccc;">
+                                                <p>&nbsp;</p>
+                                                <?php
+                                                $price=$cart_row['option_price'];
+                                                if($cart_row['option_id']==0){
+                                                    $price=$cart_row['product_price'];
+                                                }
+
+                                                $quantity=$cart_row['quantity'];
+                                                $subtotal_price=$quantity*$price;
+                                                ?>
+                                                <p><?php echo number_format($price, 2); ?></p>
+                                                <p>&nbsp;</p>
+                                                <?php if($cart_row['option_name']!="") { ?><p>&nbsp;</p><?php } ?>
+                                                <?php if(!empty($cart_row['cart_offer_prod'])){
+                                                    foreach($cart_row['cart_offer_prod'] as $k1=>$v1){?>
+                                                        <p class="promo-sec"><?php echo 'Free'; ?></p>
+                                                    <?php } } ?>
+                                            </td>
+                                            <td align="center" style="border-bottom:1px solid #cccccc;">
+                                                <p><?php echo $quantity; ?></p>
+                                                <?php if($cart_row['option_name']!="") { ?><p>&nbsp;</p><?php } ?>
+                                                <?php if(!empty($cart_row['cart_offer_prod'])){
+                                                    foreach($cart_row['cart_offer_prod'] as $k1=>$v1){?>
+                                                        <p class="offer_qty promo-sec"><?php echo $v1['offer_product_qty']; ?></p>
+                                                    <?php } } ?>
+                                            </td>
+                                            <td align="right" style="border-bottom:1px solid #cccccc;">
+                                                <p>&nbsp;</p>
+                                                <p><?php echo number_format($subtotal_price, 2); ?></p>
+                                                <p>&nbsp;</p>
+                                                <?php if($cart_row['option_name']!="") { ?><p>&nbsp;</p><?php } ?>
+                                                <?php if(!empty($cart_row['cart_offer_prod'])){
+                                                    foreach($cart_row['cart_offer_prod'] as $k1=>$v1){?>
+                                                        <p class="promo-sec"><?php echo 'Free'; ?></p>
+                                                    <?php } } ?>
+                                            </td>
+                                        </tr>
+                                        <?php   $total_price+=$subtotal_price;
+                                        $total_cart_items++; } ?>
+                                    <tr>
+                                        <td colspan="6">
+                                            <em for="cart_id[]" class="state-error"></em>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="80" colspan="2" align="left" valign="top">
+                                            <strong>Shipping Address:</strong><br />
+                                            <b><?php echo $order_details['shipping_title']; ?>:</b><br/>
+                                            <?php echo $order_details['shipping_user_name']; ?>, <?php echo $order_details['shipping_user_address']; ?>,<?php echo $order_details['shipping_user_city']; ?> - <?php echo $order_details['shipping_user_pincode']; ?>.<br />
+                                            <strong>Mobile:</strong> <?php echo $order_details['shipping_user_contact_no']; ?><br />
+                                            <strong>Email:</strong> <?php echo $order_details['shipping_user_email']; ?><br />
+                                            <strong>Landmark:</strong> <?php echo $order_details['shipping_user_landmark']; ?><br/>
+
+                                            <?php if(!empty($order_details['delivery_date'])){ ?>
+                                                <strong>Delivery Date:</strong> <?php echo date('D d M Y',strtotime(str_replace('/','-',$order_details['delivery_date']))); ?>
+                                                <?php if(!empty($order_details['delivery_time_slot'])){ ?>
+                                                    between <?php echo $order_details['delivery_time_slot'];  ?>
+                                                <?php } ?>
+                                                <br/>
+                                            <?php } ?>
+                                            <?php if(!empty($order_details['payment_mode'])){ ?>
+                                                <strong>Payment Mode:</strong> <?php echo $order_details['payment_mode']; ?>
+                                            <?php } ?>
+                                        </td>
+                                        <td colspan="4" align="right" style="font-size:16px; color:#000000;" valign="top">
+                                            <div style="font-weight:normal; font-size:13px;">
+                                                <p>Sub Total: Rs.<?php echo number_format($total_price, 2); ?></p>
+
+                                                <?php
+
+                                                if(isset($coupon_code) && isset($coupon_applied_id)) {
+                                                    $total_price=  $total_price-$coupon_discount;
+                                                    ?>
+                                                    <p>Coupon Discount for "<?php echo $coupon_code; ?>": -Rs.<?php echo number_format($coupon_discount, 2); ?></p>
+                                                <?php }
+                                                $net_total=$total_price+$order_details['delivery_cost'];
+                                                ?>
+
+                                                <p>Delivery Cost: Rs.<?php echo number_format($order_details['delivery_cost'], 2); ?></p>
+                                            </div>
+                                             <?php
+                                                            if($order_details['payment_mode']=='COD')
+                                                            {
+                                                                ?>
+                                                                <p>COD Charge: Rs.60</p>
+                                                                <span style="font-weight:bold;">Amount to pay with COD charge: Rs.<?php echo number_format($net_total+60, 2); ?></span>
+
+                                                                <?php
+                                                            }
+                                                            else
+                                                            {
+                                                                ?>
+                                                                <span style="font-weight:bold;">Paid Amount: Rs.<?php echo number_format($net_total, 2); ?></span>
+
+                                                                <?php
+                                                            }
+
+                                                            ?>  
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="80" colspan="3" align="left" valign="top">
+                                            <div class="form-horizontal">
+                                                <input type="hidden" name="order_id" id="order_id" value="<?php echo $order_details['id']; ?>" />
+                                                <div style="height:30px;"><strong>Manage Order Status</strong></div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label text-left" for="delivery_status">Delivery Status</label>
+                                                    <div class="col-lg-8">
+                                                        <select name="delivery_status" id="delivery_status" class="form-control">
+                                                            <option value="">Select order status</option>
+                                                            <option value="Shipped">Shipped</option>
+                                                            <option value="Delayed">Delayed</option>
+                                                            <option value="Delivered">Delivered</option>
+                                                            <option value="Initiate Return">Initiate Return</option>
+                                                            <option value="Returned">Returned</option>
+                                                            <option value="Cancelled">Canceled</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-1">&nbsp;</div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label text-left">Comments</label>
+                                                    <div class="col-lg-8">
+                                                        <textarea name="tracking_comments" id="tracking_comments" class="form-control"></textarea>
+                                                    </div>
+                                                    <div class="col-lg-1">&nbsp;</div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label" for="button"></label>
+                                                    <div class="col-lg-2">
+                                                        <button name="submit" class="btn btn-primary" type="submit" value="save"><i class="fa fa-save"></i> Save</button>
+                                                    </div>
+                                                    <div class="col-lg-3 nopadding">
+                                                        <button name="submit" class="btn btn-primary" type="submit" value="save_and_mail"><i class="fa fa-envelope"></i> Save and Mail</button>
+                                                    </div>
+                                                    <div class="col-lg-1">&nbsp;</div>
+                                                </div>
+
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div style="height:30px;"><strong>Order History</strong></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Product</td>
+                                                    <td>Status</td>
+                                                    <td>Comments</td>
+                                                    <td>Date</td>
+                                                </tr>
+                                                <?php if(!empty($order_history)){
+                                                    foreach($order_history as $k=>$v){?>
+                                                        <tr>
+                                                            <td><?php echo $v['prod_name']; ?></td>
+                                                            <td><?php echo $v['status_text']; ?></td>
+                                                            <td><?php echo $v['comments']; ?></td>
+                                                            <td><?php echo date('d/m/Y h:i:s',strtotime($v['created'])); ?></td>
+                                                        </tr>
+                                                <?php } }?>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <?php echo form_close(); ?>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="<?php echo $this->config->item('admin_js');?>plugins/validate/jquery.validate.min.js"></script>
+<script src="<?php echo $this->config->item('admin_js');?>plugins/validate/additional-methods.min.js"></script>
+<script src="<?php echo $this->config->item('admin_js');?>plugins/validate/jquery.validate.custom.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData('bs.modal');
+        });
+
+
+        $("#ord_frm").validate({
+            errorClass: "state-error",
+            validClass: "state-success",
+            errorElement: "em",
+            rules: {
+                'cart_id[]': {
+                    required: true
+                },
+                delivery_status:{
+                    required: true
+                },
+                tracking_comments:{
+                    noTild:true
+                }
+            }
+
+        });
+
+        $('.print_invoice').click(function(){
+            $.ajax({
+                url:'<?php echo base_url('admin/orders/print_invoice/' . $order_details['id']); ?>',
+                type:'post',
+                success:function(response){
+                    newWin = window.open("");
+                    newWin.document.write(response);
+                    newWin.print();
+                    newWin.close();
+                }
+            });
+        });
+
+    });
+</script>

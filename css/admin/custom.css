@@ -1,0 +1,216 @@
+.m0{
+    margin:0;
+}
+.form-control::-moz-placeholder {
+    color: #cecece;
+    opacity: 1;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder
+{
+    color:#cecece;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder
+{
+    color:#cecece;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder
+{
+    color:#cecece;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder
+{
+    color:#cecece;
+}
+
+.state-error{
+    color: #E36D5A;
+    font-size:12px;
+    font-style:normal;
+}
+.state-success{
+    font-size:12px;
+    font-style:normal;
+}
+
+.act_action{
+    padding: 1px;
+    border-radius: 2px;
+    color: white;
+    width: 23px;
+    height: 21px;
+    margin: 0 auto;
+    display: block;
+    margin-left: 30px;
+}
+.act_activate{
+    background: #85D27A;
+}
+.act_deactivate{
+    background: #E36D5A;
+}
+.nopadding{
+    padding:0;
+}
+.dropdown-menu{
+    min-width:82px;
+}
+.actions-btn{
+    width:114px;
+}
+.form-horizontal .checkbox{
+    min-height:21px;
+}
+.ui-pnotify{
+    width:335px !important;
+}
+.ui-pnotify-text {
+    left: 54px;
+    position: absolute;
+    top: 26px;
+}
+.clearfix{
+    clear:both;
+    display: block;
+    content: "";
+}
+/* multiselect custom css */
+.multiSelectBox .btn-group{
+    width: 100%;
+}
+.multiSelectBox .btn {
+    border-radius: 0;
+    font-size: 13px;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+    background: #fff;
+}
+.multiSelectBox .btn-default:hover,
+.multiSelectBox .btn-default:focus,
+.multiSelectBox .btn-default:active,
+.multiSelectBox .btn-default.active,
+.multiSelectBox .open > .dropdown-toggle.btn-default {
+    background-color: #ffffff;
+}
+
+.multiSelectBox .btn .caret {
+    float: right;
+    margin-top: 8px;
+}
+
+.multiSelectBox ul{
+    width:100%;
+    border-radius:0;
+    max-height:200px;
+    overflow-y:scroll;
+}
+.multiSelectBox .multiselect-container > li > a > label
+{
+    padding:10px 4px;
+    border-bottom:1px solid #EFEFEF;
+}
+
+.multiSelectBox .dropdown-menu > .active > a,
+.multiSelectBox  .dropdown-menu > .active > a:focus,
+.multiSelectBox .dropdown-menu > .active > a:hover
+{
+    background-color: #124681;
+    color: #fff;
+}
+.multiSelectBox .btn-group.open .dropdown-toggle {
+    box-shadow: none;
+}
+
+.multiSelectBox .checkbox input[type="checkbox"]
+{
+    /*display:none;*/
+    width:1px ;
+}
+.multiSelectBox .radio input[type="radio"]
+{
+    display:none;
+    width:1px ;
+}
+.multiSelectBox .input-group-addon,
+.multiSelectBox .input-group-btn{
+    display:none;
+}
+.multiselect-container.dropdown-menu .input-group {
+    width: 98%;
+}
+
+/*changed for not working */
+.multiSelectBox .radio input[type="radio"],
+.multiSelectBox .radio-inline input[type="radio"],
+.multiSelectBox .checkbox input[type="checkbox"],
+.multiSelectBox .checkbox-inline input[type="checkbox"] {
+    margin-left: -120px;
+    position: absolute;
+}
+
+.multiSelectBox .admin-form .checkbox,
+.multiSelectBox .admin-form .radio,
+.multiSelectBox .multiselect-container > li > a > label{
+    border:none !important;
+    width:100% !important;
+    padding-left:0 !important;
+    background:none !important;
+    color:#fff;
+}
+.multiselect-container.dropdown-menu > li > a {
+    background: #EFEFEF;
+    border-bottom: 1px solid #fff;
+    color: #000;
+    padding: 0 10px;
+}
+.multiselect-container.dropdown-menu > li > a > label.radio,
+.multiselect-container.dropdown-menu > li > a > label.checkbox {
+    color: #000;
+}
+.multiselect-container.dropdown-menu > li.active > a > label{
+    color:#fff;
+}
+/* end of multiselect custom css */
+/* radio css */
+.form-horizontal .radio, .form-horizontal .checkbox {
+    min-height: 21px;
+}
+.form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+    padding-top: 0;
+}
+/*end*/
+
+.note{
+    font-size:12px;
+    padding:10px 0;
+    color:#999999;
+}
+.file {
+    position: absolute;
+}
+/*dropzone demo css*/
+.tray-bin{
+    margin:0;
+}
+.dz-demo .dz-message {
+    opacity: 0 !important;
+}
+.dropzone .dz-preview.example-preview .dz-success-mark,
+.dropzone-previews .dz-preview.example-preview .dz-success-mark {
+    opacity: 1;
+}
+.dropzone .dz-preview.example-preview .dz-error-mark,
+.dropzone-previews .dz-preview.example-preview .dz-error-mark {
+    opacity: 0;
+}
+.dropzone{
+    background: transparent;
+    border: 0;
+}

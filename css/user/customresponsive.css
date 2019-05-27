@@ -1,0 +1,906 @@
+
+@media only screen and (max-width:320px)
+{
+	
+	.header-bg {
+		height: 400px !important;
+	}
+	.mobile-menu {
+		right: 10px !important;
+	}
+	.main-image
+	{
+		width: 100% !important;
+		overflow:visible;
+	}
+	.product-details a
+	{
+		font-size:13px;
+	}
+	.quantity
+	{
+		margin-bottom:0px;
+	}
+	.td-details
+	{
+		padding:0px 5px;
+		font-size:13px;
+	}
+	.tt-amt span {
+		font-size: 13px;
+	}
+	.sign-view{
+		padding: 0;
+	}
+	.signin-content h2{
+		font-size: 24px;
+	}
+	
+}
+
+@media  only screen and (max-width: 480px)
+{  
+	.payment-nopad{
+		padding: 0;
+	}
+	.address-forms{
+		padding: 0;
+	}
+	.sigin-mb{
+		padding: 0;
+	}
+	.map-mb{
+		padding: 0;
+	}
+	.order_head .label{
+		    margin-bottom: 20px;
+	}
+	.order_head a{
+		margin-bottom: 20px;
+	}
+	.procart-col{
+		padding: 0px 0px 0px 5px !important;
+	}
+	.coupon-cd{
+		float: none;
+		margin: auto;
+	}
+	.trash-cart{
+		float: none !important;
+		display: block;
+	}
+	.address-box {
+		margin-bottom: 20px;
+	}
+	.guest-account{
+		width: 100%;
+	}
+	.signin-content h2{
+		font-size: 26px;
+	}
+	.sign-view{
+		padding: 0;
+	}
+	.product-details a
+	{
+		font-size:13px;
+	}
+	.quantity
+	{
+		margin-bottom:0px;
+	}
+	.td-details
+	{
+		padding:0px 5px;
+		font-size:13px;
+	}
+	.tt-amt span {
+		font-size: 13px;
+	}
+	.pro-col
+	{
+		width:48%;
+		margin-bottom: 20px;
+	}
+	.slider-box
+	{
+		top:-35px !important;
+		width: 100% !important;
+	}
+	
+	.header-bg
+	{
+		/*height:492px;*/
+		height: 415px;
+	}
+	.carousel {
+		width: 100% !important;
+	}
+	.footer-box {
+		height: 380px;
+	}
+	.bike {
+		width: 200px;
+		top: -58px;
+		left: 0;
+	}
+	.footer-bg {
+		height: auto !important;
+	}
+	.footer-links
+	{
+		border:none;
+	}
+	.footer-links li 
+	{
+		display:block !important;
+	}
+	.footerlink-inner
+	{
+		padding:30px !important;
+		padding-bottom: 30px;
+	}
+	.steps-col
+	{
+		width:100%;
+	}
+	.footerinnerpg-box
+	{
+		height: 410px;
+	}
+	.footerinnerpg-box .bike
+	{
+		top: -35px;
+	}
+	.productbox-col
+	{
+		margin-bottom:30px;
+	}
+	.page-titleinner
+	{
+		height: 190px;
+	}
+	.page-headerbg
+	{
+		height: 270px;
+	}
+	.cartbt-col
+	{
+		float:none;
+		display:block;
+		text-align:center;
+	}
+	.cartbtm-bttns button, .cartbtm-bttns a
+	{
+		width: 100%;
+		display:block;
+		margin-right: 0;
+		margin-bottom:10px;
+	}
+	.cartbtm-bttns
+	{
+		float:none;
+	}
+	.cartbtm-bttns
+	{
+		margin-left:20px;
+	}
+	.tppayment-box .ptbox li a, .tppayment-box .bank-dt li a
+	{
+		font-size: 14px;
+		padding: 10px 18px;
+	}	
+	.bank-dt li
+	{
+		margin-bottom: 0;
+		width: 33.3%;
+	}
+	.paybtn button {
+		width: 90%;
+		padding: 10px 0px;
+		font-size: 20px;
+	}
+	.pincode input {
+		width: 55%;
+	}
+}
+
+
+
+@media  only screen and (max-width: 576px)
+{
+
+	
+	
+	.doodle-right,.doodle-left
+	{
+		display:none;
+	}
+	.footerlink-box .footer-links li
+	{
+		padding: 5px 20px;
+	}
+	.mobile-menu {
+		position: absolute;
+		right:40px;
+		top: 15px;
+	}
+	.section-bg
+	{
+		height: auto !important;
+	}
+
+
+}
+
+@media (min-width:576px) and (max-width: 767px)
+{
+	
+
+
+}
+
+
+@media (min-width: 481px) and (max-width: 767px)
+{   
+	.slider-box
+	{
+		top:-20px;
+		width: 100%;
+	}
+	
+	.header-bg
+	{
+		/*height:562px;*/
+		height: 430px;
+	}
+	.doodle-right,.doodle-left
+	{
+		bottom:0;
+	}
+	.footerlink-box .footer-links li
+	{
+		padding: 5px 5px;
+	}
+	.carousel {
+		width: 80% !important;
+		margin: auto;
+	}
+
+	.pro-col
+	{
+		width:36%;
+		margin-bottom: 20px;
+	}
+	.pro-col img
+	{
+		margin:auto;
+	}
+	.mobile-menu {
+		position: absolute;
+		right:70px;
+		top: 15px;
+	}
+
+	.bike
+	{
+		width: 285px;
+		top: -80px;
+	}
+	.bottom-logo
+	{
+		float: right;
+	}
+	
+	.footerlink-inner
+	{
+		padding-top:60px;
+	}
+	.footer-bg
+	{
+		height: 245px;
+	}
+	.footer-box
+	{
+		height:278px;
+	}
+
+	.steps-col
+	{
+		width:50%;
+	}
+	
+	.page-headerbg
+	{
+		height: 280px;	
+	}
+	.page-titleinner {
+		height: 180px;
+	}
+	.productbox-col
+	{
+		width: 50%;
+		margin-bottom:30px;
+	}
+	.section-bg
+	{
+		height: auto;
+	}
+	.footerinnerpg-box
+	{
+		height: 330px;
+	}
+	.footerinnerpg-box .bike
+	{
+		top:-60px;
+	}
+	.footer-innerpg .footer-links li {
+		padding: 5px 30px;
+	}
+	.footerpage-bg
+	{
+		height:255px;
+	}
+	.productbox-col::after
+	{
+		position: relative;
+	}
+
+	.bank-dt li {
+		width: 33.3%;
+	}
+
+}
+
+@media  only screen and (min-width:767px)
+{
+	.ship-mdl-btn{
+		width: 40%;
+	}
+	.proceed-to-pay-btn{
+		width: 50%;
+		margin-top: 15px;
+	}
+	.top-layer img
+	{
+		height: 100%;
+		margin: auto;
+	}
+}
+@media  only screen and (max-width:767px)
+{
+		.icons-left-mb-view li img
+{
+   height: 22px;
+}
+.icons-right-mb-view li img
+{
+   height: 22px;
+}
+.icons-right-mb-view .cart_count{
+    top: 8px;
+    right: 20px;
+}
+	.table-responsive
+	{
+		border:none;
+	}
+	.mobile-menu
+	{
+		display:block;
+	}
+	.nav-menu,.line
+	{
+		display:none;
+	}
+	.logo
+	{
+
+	}
+
+	.header-inner
+	{
+		height: 80px;
+	}
+	.logo img
+	{
+		width: 120px;
+	}
+	.header-inner
+	{
+		height: 0;
+	}
+	.product-content p
+	{
+		font-size:20px;
+	}
+	.steps-icon
+	{
+		margin-bottom:30px;
+	}
+	.page-titleinner h2 {
+		font-size: 36px;
+	}
+	.highlight-content h2
+	{
+		font-size: 30px;
+	}
+	.highlight-content p {
+		font-size: 20px;
+		
+	}
+	.info-content p
+	{
+		font-size: 18px;
+		line-height:26px;
+	}
+	.top-layer img
+	{
+		height: 78px;
+		margin: auto;
+		width: 100%;
+	}
+	.highlight-content
+	{
+		margin-top:0;
+		margin-bottom:0;
+	}
+	.steps-section
+	{
+		margin-bottom: 20px;
+	}
+	.detail-content,.nutrition-table h4
+	{
+		text-align:center;
+	}
+	.nutrition-table
+	{
+		text-align:left;
+	}
+	.detail-img img
+	{
+		margin: auto;
+	}
+	.productimg-box
+	{
+		margin-bottom:30px;
+	}
+	.story-page p
+	{
+		font-size:18px;
+	}
+	.story-col
+	{
+		padding:0;
+	}
+	.contact-page address
+	{
+		font-size:18px;
+	}
+	.bottom-col
+	{
+		margin-top:10px;
+	}
+	.bottom-col p
+	{
+		text-align: center;
+		margin:0;
+	}
+	.copyright,.poweredby
+	{
+		float: none;
+	}
+	.slider-box
+	{
+		z-index:0;
+	}
+	.story-sectionbg
+	{
+		height: auto;
+	}
+	.contact .section-bg
+	{
+		height:auto;
+	}
+	
+	.contact-page address
+	{
+		font-size:22px;
+		text-align: center;
+		margin-top:15px;
+	}
+	.find-vendor span
+	{
+		margin-bottom:15px;
+		padding: 0;
+		display:block;
+	}
+	.sub-image .thumb-img
+	{
+		display:inline-block;
+	}
+	.main-image
+	{
+		width: 100%;
+		overflow:visible;
+	}
+	.image-area
+	{
+		width: 100% !important; 
+	}
+	.thumb-box
+	{
+		float:none !important;
+	}
+	.cartbtm-bttns button,.cartbtm-bttns a
+	{
+		font-size:16px;
+		padding: 10px 14px;
+	}
+	.payment-logo img
+	{
+		border:none;
+	}
+	.btn-nowe 
+	{
+		width: 100%;
+	}
+	.newlog form label
+	{
+		margin-bottom:10px;
+	}
+	.form-group
+	{
+		display:block;
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+	.header-bg
+	{
+		height: 600px;
+	}
+	.nav-menu li
+	{
+		padding: 8px 10px;
+	}
+	.nav-menu li a span
+	{
+		font-size:18px;
+	}
+
+	.header-inner
+	{
+		height:95px;
+		padding: 5px 0px;
+	}
+	.header-bg
+	{
+		height:495px;
+	}
+	.slider-box
+	{
+		top:0px;
+		width: 100%;
+	}
+	.pro-col
+	{
+		width:24%;
+		margin-bottom: 20px;
+	}
+	.pro-col img
+	{
+		margin:auto;
+	}
+	.line
+	{
+		top: -26px;
+	}
+	.steps-icon
+	{
+		margin-bottom: 20px;
+	}
+	.highlight-content
+	{
+		margin-top:0;
+		margin-bottom: 0;
+	}
+	.footer-box
+	{
+		height:220px;
+	}
+	.footerlink-box .footer-links li {
+		padding: 6px 10px;
+	}
+	.footerlink-inner
+	{
+		padding-top: 55px;
+	}
+	.footer-bg
+	{
+		height:200px;
+	}
+	.page-titleinner
+	{
+		height:255px;
+	}
+	.page-headerbg
+	{
+		height:370px;
+	}
+/*	.section-bg
+	{
+		height:760px;
+	}*/
+	/*.partner-bg
+	{
+		height: 2210px;
+	}*/
+	.footerinnerpg-box {
+		height: 365px;
+	}
+	.footerpage-bg
+	{
+		height: 250px;
+	}
+	.footer-innerpg .footer-links li {
+		padding: 10px 30px;
+	}
+
+	.footerinnerpg-box .bike
+	{
+		top:-58px;
+	}
+	.detail-bg {
+		height: 1690px;
+	}
+
+	.product-content p
+	{
+		font-size: 26px;
+	}
+	.step-content
+	{
+		font-size:20px;
+	}
+	.highlight-content h2
+	{
+		font-size: 36px;
+	}
+	.highlight-content p
+	{
+		font-size: 24px;
+		line-height: 38px;
+	}
+	.info-content p {
+		font-size: 24px;
+		line-height: 36px;
+	}
+
+	.contact-page address
+	{
+		font-size:24px;
+		text-align: center;
+		margin-top:15px;
+	}
+
+/*	.contact .section-bg
+	{
+		height: 1530px;
+	}*/
+	.shipping-bg {
+		height: 1280px;
+	}
+	.detail-content
+	{
+		text-align:center;
+	}
+	.nutrition-table table
+	{
+		display:inline-block;
+	}
+	.btn-nowe
+	{
+		width: 65%;
+	}
+}
+@media (max-width: 992px)
+{
+	.top-layer
+	{
+		left:0;
+		width:100%;
+	}
+	.productbox-col::after
+	{
+		content:"" !important;
+	}
+	.clients-logo
+	{
+		margin-bottom:25px;
+	}
+	.story-bg
+	{
+		display:none;
+	}
+	.story-page,.form-box
+	{
+		margin-bottom:30px;
+	}
+	.total-amt .table-responsive
+	{
+		border:none;
+	}
+	.order-bg
+	{
+		margin-bottom: 30px;
+	}
+	.address-outer
+	{
+		padding:0;
+		margin-bottom:20px;
+	}
+	.address-box
+	{
+		margin-bottom:20px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px)
+{
+	.nav-menu li
+	{
+		padding: 10px 0px;
+	}
+	.product-content p
+	{
+		font-size: 28px;
+	}
+	.top-layer
+	{
+		left:0;
+		width:100%;
+	}
+	.header-inner
+	{
+		height: 125px;
+	}
+	.header-bg
+	{
+		/*height:580px;*/
+		height: 510px;
+	}
+	.footer-bg
+	{
+		height: 210px;
+	}
+	.footerlink-inner
+	{
+		padding-top: 60px;
+	}
+	.footer-innerpg
+	{
+		padding-top:30px;
+	}
+	.page-titleinner
+	{
+		height: 300px;
+	}
+	.page-headerbg
+	{
+		height: 445px;
+	}
+	.footer-innerpg .footer-links li
+	{
+		padding: 10px 10px;
+	}
+	.detail-bg {
+		height: 1208px;
+	}
+	.footerlink-box .footer-links li
+	{
+		padding: 15px 10px;
+	}
+	.connect-to
+	{
+		margin:0;
+	}
+	.step-content
+	{
+		font-size:20px;
+	}
+	.highlight-content h2
+	{
+		font-size: 45px;
+	}
+	.highlight-content p
+	{
+		font-size: 28px;
+		line-height: 38px;
+	}
+	.info-content p {
+		font-size: 24px;
+		line-height: 36px;
+	}
+	.footer-box
+	{
+		height: 220px;
+	}
+/*	.story-sectionbg
+	{
+		height: 780px;
+	}*/
+
+	.order-bg
+	{
+		padding:20px;
+	}
+	.shp-list li
+	{
+		padding: 10px 25px;
+
+	}
+	.paybtn button {
+		width: 58%;
+	}
+}
+
+@media(max-width:1200px)
+{
+	.page-headerbg
+	{
+		background-size:cover;
+
+	}
+}
+
+@media(min-width: 1200px)
+{
+
+	.container
+	{
+		width: 1200px !important;
+	}
+
+	
+}
+
+@media (min-width: 1200px) and (max-width:1366px)
+{
+	.slider-box
+	{
+		position: relative;
+		width: 60%;
+		bottom:135px;
+	}
+	/*.top-layer
+	{
+		left: 90px;
+		width: 85%;
+	}*/
+	.header-inner
+	{
+		height: 125px;
+	}
+	.nav-menu li
+	{
+		padding: 10px 10px;
+	}
+	.header-bg
+	{
+		/*height:555px;*/
+		height:510px;
+	}
+	.page-headerbg
+	{
+		background-size:cover;
+
+	}
+	.info-content p {
+		font-size: 28px;
+		line-height: 36px;
+	}
+	
+}
